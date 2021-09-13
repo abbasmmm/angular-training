@@ -1,0 +1,30 @@
+<h3>Customer Component</h3>
+
+<div class='table-container'>
+    <table id="customers">
+        <tr>
+            <td>
+                Id
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Email
+            </td>
+            <td>
+                Created Time
+            </td>
+            <td>
+                Country
+            </td>
+        </tr>
+        <tr *ngFor="let cust of data">
+            <td>{{cust.id}}</td>
+            <td>{{cust.first | uppercase}}</td>
+            <td>{{cust.email}}</td>
+            <td>{{cust.created_at | date : 'medium'}}</td>
+            <td>{{cust.country}}</td>
+        </tr>
+    </table>
+</div>
