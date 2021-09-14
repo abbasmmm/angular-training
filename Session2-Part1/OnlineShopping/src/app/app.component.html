@@ -1,0 +1,15 @@
+<header>
+  Online shopping app
+</header>
+<div class="mainContainer">
+  {{userSelectedCategory}}
+  <select [(ngModel)]="userSelectedCategory">
+    <option value="electronics">Electronics</option>
+    <option value="homeNeeds">Home Needs</option>
+    <option value="books">Books</option>
+  </select>
+  <app-product-details [selectedCategory]="userSelectedCategory"></app-product-details>
+</div>
+<footer>
+  @copyrights Wellsfargo 2021
+</footer>

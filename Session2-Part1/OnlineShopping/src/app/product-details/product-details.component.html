@@ -1,0 +1,23 @@
+<p>product-details works!</p>
+<!--
+<div >
+    <input type="number" [(ngModel)]="userPrice">
+</div>
+-->
+<br>
+<div *ngFor="let details of productDetails" class='detalisContainer'>
+    <ul *ngIf="details.category == selectedCategory">
+        <li>
+            Product Name: {{details.name}}
+        </li>
+        <li>
+            Price: {{details.price}}
+        </li>
+        <li>
+            Manufacture {{details.manufacturer}}
+        </li>
+        <li>
+            <img src="{{details.imageUrl}}" alt="">
+        </li>
+    </ul>
+</div>

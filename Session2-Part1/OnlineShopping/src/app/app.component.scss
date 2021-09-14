@@ -1,0 +1,25 @@
+header,
+footer,
+.mainContainer {
+    border: 1px solid;
+    padding: 10px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    text-align: center;
+
+
+}
+
+.mainContainer {
+    top: 50px;
+    bottom: 60px;
+    overflow: auto;
+}
+
+footer {
+    bottom: 10px;
+}
+ul {
+    float: left;
+}
