@@ -1,1 +1,11 @@
-<p>customer-edit works!</p>
+<h3> Edit customer</h3>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="FirstName" name="firstname" [(ngModel)]="custObj.first">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" (click)="save()">Save</button>
+
+</form>

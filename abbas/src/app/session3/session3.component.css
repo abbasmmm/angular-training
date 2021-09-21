@@ -1,0 +1,14 @@
+.child-body {
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+.router {
+  padding: 10px;
+}
+
+.header {
+  background-color: white;
+  width: 190px;
+  padding: 0 10px;
+}
