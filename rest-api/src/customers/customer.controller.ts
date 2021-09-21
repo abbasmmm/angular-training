@@ -16,6 +16,11 @@ export class CustomersController {
 
     }
 
+    @Get(':id')
+    getOne(@Param('id') id: number) {
+        return this.customerService.findOne(id);
+    }
+
     @Get()
     findAll() {
         return this.customerService.getAll();

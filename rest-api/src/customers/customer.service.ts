@@ -13,7 +13,7 @@ export class CustomersService {
 
     reset() {
         this.customers = JSON.parse(JSON.stringify(this.cust));
-        this.nextid = 21;        
+        this.nextid = 21;
     }
 
     nextid = 21;
@@ -22,7 +22,10 @@ export class CustomersService {
     }
 
     findOne(id: number) {
-        return this.customers.filter(x => x.id == id)[0];
+        const obj = this.customers.filter(x => x.id == id)[0];
+        if (!obj)
+            throw new NotFoundException('Customer not found.');
+        return obj;
     }
 
     create(customer: Customer) {
@@ -43,7 +46,8 @@ export class CustomersService {
         obj.first = customer.first;
         obj.last = customer.last;
 
-        return { status: 'success', message: 'Record has been updated successfully!!' };    }
+        return { status: 'success', message: 'Record has been updated successfully!!' };
+    }
 
     delete(id: number): any {
         const obj = this.customers.filter(x => x.id == id)[0];

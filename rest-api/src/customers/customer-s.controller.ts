@@ -24,6 +24,11 @@ export class CustomersSecureController {
         return this.customerService.getAll();
     }
 
+    @Get(':id')
+    getOne(@Param('id') id: number) {
+        return this.customerService.findOne(id);
+    }
+
     @Post()
     create(@Body() customer: Customer): Customer {
         return this.customerService.create(customer);
