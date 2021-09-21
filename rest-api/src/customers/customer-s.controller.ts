@@ -21,7 +21,7 @@ export class CustomersSecureController {
 
     @Get()
     findAll() {
-        return this.customerService.getAll();
+        return this.sleep(2000, () => this.customerService.getAll())
     }
 
     @Get(':id')

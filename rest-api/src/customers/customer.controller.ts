@@ -16,14 +16,16 @@ export class CustomersController {
 
     }
 
-    @Get(':id')
-    getOne(@Param('id') id: number) {
-        return this.customerService.findOne(id);
-    }
+
 
     @Get()
     findAll() {
-        return this.customerService.getAll();
+        return this.sleep(2000, () => this.customerService.getAll())
+    }
+
+    @Get(':id')
+    getOne(@Param('id') id: number) {
+        return this.customerService.findOne(id);
     }
 
     @Post()
@@ -38,7 +40,7 @@ export class CustomersController {
 
     @Delete(':id')
     delete(@Param('id') id: number) {
-        return this.sleep(5000, () => this.customerService.delete(id))
+        return this.sleep(1000, () => this.customerService.delete(id))
     }
 
     @Post('reset')
