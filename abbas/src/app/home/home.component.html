@@ -1,0 +1,19 @@
+<div style="display: grid;grid-template-columns: 100px auto;">
+    <div class='menu'>
+        <div class='link'><a [routerLink]="'/session2'">Session 2</a></div>
+        <div class='link'><span>Session 3</span> </div>
+        <div class='link'><a [routerLink]="'/session3/material'">Material</a> </div>
+        <div class='link'><a [routerLink]="'/session3/customer'">Customer</a> </div>
+        <div class='link'><a [routerLink]="'/session3/admin'">Admin</a> </div>
+    </div>
+
+    <div>
+        <div class='header'> Home Router Outlet</div>
+        <div class="child-body">
+            <div class="router">
+                <router-outlet>
+                </router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

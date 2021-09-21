@@ -1,0 +1,32 @@
+a, span {
+  margin: 10px;
+}
+.menu {
+  float: left;
+  margin-top: 70px;
+}
+
+.link {
+  background-color: #ccc;
+  margin: 10px 0;
+  width: 100px;
+  padding: 3px;
+}
+
+.child-body {
+  margin-left: 50px;
+  border: 1px solid #ccc;
+  /* height: 90vh; */
+  overflow: auto;
+}
+
+.router {
+  padding: 10px;
+}
+
+.header {
+  margin-left: 40px;
+  background-color: white;
+  width: 140px;
+  padding: 0 10px;
+}

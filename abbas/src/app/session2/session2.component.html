@@ -1,0 +1,17 @@
+<div class='app-container'>
+  <h1>Session 2</h1>
+  <h2>Builtin Directives, Custom Directives, Pipes, Modules </h2>
+  <div>
+    <button (click)="loadDirective()"> Load Directive Comp </button>
+    <button (click)="loadCustomer()"> Load Customer Comp </button>
+    <button (click)="loadMarks()"> Load Marks Comp </button>
+
+  </div>
+  <div class='app-body'>
+    <!-- Load components here -->
+
+    <app-directive-examaple *ngIf="currentControl === 'directivecomponent'"></app-directive-examaple>
+    <app-customer *ngIf="currentControl === 'customercomponent'"></app-customer>
+    <app-marks *ngIf="currentControl === 'marks'"></app-marks>
+  </div>
+</div>
