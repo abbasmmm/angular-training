@@ -1,0 +1,5 @@
+npm install -g @nestjs/cli
+npm install
+npm run start
+
+Navigate to http://localhost:3000/api/
