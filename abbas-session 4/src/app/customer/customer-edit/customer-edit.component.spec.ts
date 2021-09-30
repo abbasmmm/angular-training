@@ -1,4 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
 
 import { CustomerEditComponent } from './customer-edit.component';
 
@@ -8,7 +12,8 @@ describe('CustomerEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomerEditComponent ]
+      declarations: [ CustomerEditComponent ],
+      imports: [HttpClientModule, MaterialModule, BrowserAnimationsModule, RouterModule.forChild([])]
     })
     .compileComponents();
   });
