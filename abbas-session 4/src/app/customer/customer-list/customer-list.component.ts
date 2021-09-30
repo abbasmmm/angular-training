@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CustomerDataService } from '../customer-data.service';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class CustomerListComponent implements OnInit {
   isLoading = false;
   dataSource: any = []
   displayedColumns = ["id", "email", "first", "last", "company", "country", "actions"]
-  constructor(private customerService: CustomerService, private snackbar: MatSnackBar) { }
+  constructor(private customerService: CustomerService, private snackbar: MatSnackBar, private dataservice: CustomerDataService) { }
 
   ngOnInit(): void {
     this.loadTable();
@@ -19,10 +20,15 @@ export class CustomerListComponent implements OnInit {
 
   private loadTable() {
     this.isLoading = true;
+    console.log('1')
     this.customerService.getAll().subscribe(res => {
+      console.log('2')
       this.dataSource = res;
+      this.dataservice.setData(this.dataSource)
       this.isLoading = false;
     });
+    console.log('3')
+    console.log('4')
   }
 
   delete(id: number) {

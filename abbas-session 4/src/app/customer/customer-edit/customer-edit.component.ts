@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar, matSnackBarAnimations } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CustomerDataService } from '../customer-data.service';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -11,12 +12,14 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerEditComponent implements OnInit {
   custObj: any = {};
-  constructor(private route: ActivatedRoute, private customerService: CustomerService, private snackbar: MatSnackBar, private router: Router) { }
+  constructor(private route: ActivatedRoute, private customerService: CustomerService, private snackbar: MatSnackBar, private router: Router, private dataService: CustomerDataService) { }
 
   ngOnInit(): void {
-    this.customerService.find(this.route.snapshot.params.id).subscribe(res => {
-      this.custObj = res;
-    });
+    // this.customerService.find(this.route.snapshot.params.id).subscribe(res => {
+    //   this.custObj = res;      
+    // });
+
+    this.custObj = this.dataService.getDataOf(this.route.snapshot.params.id);
   }
 
   save() {

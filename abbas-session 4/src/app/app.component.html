@@ -9,15 +9,15 @@
           <mat-icon>home</mat-icon>
           <span>Home</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="navigate('customer')">
           <mat-icon>people_outline</mat-icon>
-          <span>Connecting</span>
+          <span>Customers</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)="navigate('admin')">
           <mat-icon>videocam</mat-icon>
-          <span>Let's talk</span>
+          <span>Admin</span>
         </button>
-        <button mat-menu-item>
+        <button mat-menu-item (click)='logout()'>
           <mat-icon>exit_to_app</mat-icon>
           <span>Logout</span>
         </button>
@@ -27,7 +27,7 @@
     <span class="example-spacer"></span>
     <div class='login'>
       <mat-icon>person</mat-icon>
-      <div>Administrator</div>
+      <div>{{userName}}</div>
     </div>
   </mat-toolbar>
   <div class="content">
