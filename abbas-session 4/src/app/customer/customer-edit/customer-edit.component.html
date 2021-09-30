@@ -1,0 +1,22 @@
+<h3> Edit customer</h3>
+
+<form class="example-form">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" name="firstname" [(ngModel)]="custObj.first"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" name="lastname" [(ngModel)]="custObj.last" />
+    </mat-form-field>
+
+    <br>
+    <mat-form-field style="width: 420px;" class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" name="email" [(ngModel)]="custObj.email">
+    </mat-form-field>
+</form>
+
+<button mat-flat-button color="primary" (click)="save()">Save</button>

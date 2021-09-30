@@ -1,0 +1,50 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <!-- first Column -->
+    <ng-container matColumnDef="first">
+        <th mat-header-cell *matHeaderCellDef> First </th>
+        <td mat-cell *matCellDef="let element"> {{element.first}} </td>
+    </ng-container>
+
+    <!-- last Column -->
+    <ng-container matColumnDef="last">
+        <th mat-header-cell *matHeaderCellDef> Last </th>
+        <td mat-cell *matCellDef="let element"> {{element.last}} </td>
+    </ng-container>
+
+    <!-- company Column -->
+    <ng-container matColumnDef="company">
+        <th mat-header-cell *matHeaderCellDef> Company </th>
+        <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+    </ng-container>
+
+
+    <!-- country Column -->
+    <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef> Country </th>
+        <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <a (click)="delete(element.id)"> <button mat-flat-button> Delete</button></a> &nbsp;
+            <a routerLink='edit/{{element.id}}'><button mat-flat-button> Edit</button></a>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
